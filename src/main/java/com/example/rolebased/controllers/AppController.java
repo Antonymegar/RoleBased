@@ -1,4 +1,4 @@
-package controllers;
+package com.example.rolebased.controllers;
 
 import com.example.rolebased.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,17 +13,23 @@ public class AppController {
     public String viewHomePage(){
         return  "index";
     }
+    @GetMapping("/new")
+    public String newUser(){
+        return  "create_user";
+    }
     @GetMapping("/admin")
     public String adminPanel(){
         return  "admin";
     }
-    @GetMapping("/new")
-    public String addMeeting(){
+    @GetMapping("/edit")
+    public String editUser(){
+        return  "edit_user";
+    }
+    @GetMapping("/create_meeting")
+    public String editMeeting(){
         return  "meeting";
     }
-    @GetMapping("/edit")
-    public String editMeeting(){
-        return  "edit_meeting";
-    }
+
+
 
 }
